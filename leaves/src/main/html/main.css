@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 24px/1.4 Georgia, Serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td:nth-child(1) {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: right;
+}
+
+@keyframes flashgreen {
+    0%   {background-color:lightgreen;}
+    100% {background-color:white;}
+}
+
+.flashgreen {
+    animation: flashgreen;
+    animation-duration: 2s;
+}
+
+@keyframes flashred {
+    0%   {background-color:pink;}
+    100% {background-color:white;}
+}
+
+.flashred {
+    animation: flashred;
+    animation-duration: 2s;
+}
+
+.number {
+    text-align: right;
+}
+
+table, thead, tbody, th, td, tr {
+    display: block;
+}
+
+tr {
+    border: 1px solid #ccc;
+}
+
+td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+}
+
+td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+td.gdax:before {
+    text-align: left;
+    content: "GDAX";
+}
+
+td.gemeni:before {
+    text-align: left;
+    content: "Gemeni";
+}
+
+td.okcoin:before {
+    text-align: left;
+    content: "OK Coin";
+}
+
+td.cex:before {
+    text-align: left;
+    content: "Cex.io";
+}
+
+td:nth-of-type(2):before {
+    text-align: left;
+    content: "vs GDAX";
+}
+
+td:nth-of-type(3):before {
+    text-align: left;
+    content: "vs Gemeni";
+}
+td:nth-of-type(4):before {
+    text-align: left;
+    content: "vs Cex.io";
+}
+td:nth-of-type(5):before {
+    text-align: left;
+    content: "vs OK Coin";
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+h2 {
+    text-align: center;
+}
+

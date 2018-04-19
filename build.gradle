@@ -1,0 +1,39 @@
+allprojects {
+    group 'tea'
+    version '0.1-SNAPSHOT'
+}
+
+buildscript {
+    ext.kotlinVersion = '1.2.30'
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "com.eriwen:gradle-js-plugin:2.14.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+ext {
+    libraries = [
+            junit: "junit:junit:4.12",
+            kotlin_stdlib: "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            kotlin_stdlib_common: "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlinVersion",
+            kotlin_stdlib_js: "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion",
+            kotlin_test_annotations_common: "org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlinVersion",
+            kotlin_test_common: "org.jetbrains.kotlin:kotlin-test-common:$kotlinVersion",
+            kotlin_test_js: "org.jetbrains.kotlin:kotlin-test-js:$kotlinVersion",
+            kotlin_test_junit: "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion",
+    ]
+}
+
+subprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+

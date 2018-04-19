@@ -1,0 +1,26 @@
+apply plugin: 'kotlin-platform-js'
+
+archivesBaseName = 'tea-leaves'
+
+dependencies {
+    expectedBy project(':water')
+    compile project(':air')
+    compile libraries.kotlin_stdlib_js
+    testCompile libraries.kotlin_test_js
+}
+
+[compileKotlin2Js, compileTestKotlin2Js]*.configure {
+    kotlinOptions.moduleKind = "plain"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+}
+
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.kotlin
+}
+
+artifacts {
+    archives sourcesJar
+}

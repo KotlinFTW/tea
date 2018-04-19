@@ -1,0 +1,10 @@
+apply plugin: 'kotlin-platform-common'
+
+archivesBaseName = 'tea-water'
+
+dependencies {
+    compile libraries.kotlin_stdlib_common
+    testCompile libraries.kotlin_test_annotations_common
+    testCompile libraries.kotlin_test_common
+}
+

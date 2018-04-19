@@ -1,0 +1,6 @@
+rootProject.name = 'tea'
+
+include ':water'
+include ':cup'
+include ':air'
+include ':leaves'

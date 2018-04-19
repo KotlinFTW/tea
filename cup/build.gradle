@@ -1,0 +1,33 @@
+apply plugin: 'kotlin-platform-jvm'
+
+archivesBaseName = 'tea-cup'
+
+dependencies {
+    expectedBy project(':water')
+    compile libraries.kotlin_stdlib
+    testCompile libraries.kotlin_test_junit
+
+    compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version:'2.9.+'
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version:'2.9.+'
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version:'2.9.+'
+    compile group: 'org.jboss.resteasy', name: 'jaxrs-api', version:'3.0.4.Final'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-jackson-provider', version:'3.0.17.Final'
+    compile group: 'org.jboss.resteasy', name: 'resteasy-netty', version:'3.1.0.Final'
+}
+
+
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.kotlin
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+//todo: figure out how to make this depend on the build
+task go(dependsOn: build, type:JavaExec) {
+    main = 'cup.MainKt'
+    classpath = sourceSets.main.runtimeClasspath
+}
