@@ -5,7 +5,7 @@ This is a mobile friendly web page that shows you the current arbs between vario
 ## Quick Start ##
 ```
 gradle build go
-google-chrome http://localhost:8081
+google-chrome http://localhost
 ```
 
 ## Directory Structure ##
